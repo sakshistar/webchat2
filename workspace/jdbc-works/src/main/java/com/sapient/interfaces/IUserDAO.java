@@ -6,11 +6,13 @@ public interface IUserDAO {
 	
 	public boolean registerUser(User user);
 	
-	public boolean loginUser(String user_id,String password);
+	public boolean loginUser(String email,String password);
 	
 	public boolean getUser(String user_id);
 	
-	public boolean changePassword(String user_id,String password);
+	public boolean changePassword(String email,String password);
+	
+	public boolean deleteUser(String email);
 	
 
 }

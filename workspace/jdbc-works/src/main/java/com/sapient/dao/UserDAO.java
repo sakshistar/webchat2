@@ -56,7 +56,23 @@ public class UserDAO implements IUserDAO {
 		return false;
 	}
 
-	public boolean changePassword(String user_id, String password) {
+	public boolean changePassword(String email, String password) {
+		// TODO Auto-generated method stub
+		
+		String sql = "update users set password=? where email=?";
+		try {
+			PreparedStatement ps = GetConnection.getMySQLConn().prepareStatement(sql);
+			ps.setString(1, password);
+			ps.setString(2, email);		
+			int rowsAffected = ps.executeUpdate();
+			return rowsAffected==1; //checking if rowAffcted is 1
+			} catch (SQLException e) {
+			System.out.print(e.getMessage());
+		    return false;
+		}
+	}
+
+	public boolean deleteUser(String email) {
 		// TODO Auto-generated method stub
 		return false;
 	}

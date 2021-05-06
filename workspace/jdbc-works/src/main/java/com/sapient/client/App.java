@@ -12,7 +12,7 @@ public class App {
 		
 		IUserDAO userdao = new UserDAO(); 
 
-		System.out.println(userdao.loginUser("user3@gmail.com","user3"));
+		System.out.println(userdao.changePassword("user2@gmail.com","user1"));
 
 		
 
